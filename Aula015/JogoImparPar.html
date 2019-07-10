@@ -1,0 +1,43 @@
+<script type="text/javascript">
+
+    //Jogo do par ou impar
+    var user = { option: null, number: null}
+    var cpu = { option: null, number: null }
+
+    start();
+    
+    function decisaoPartida() {
+        var decision = user.number + cpu.number;
+        var optionUser = user.option;
+        
+        if (decision % 2 == 0 && optionUser == "par") {
+            document.write("Você Ganhou!");
+        } else if (decision % 2 != 0 && optionUser == "impar") {
+            document.write("Você Ganhou!");
+        } else {
+            document.write("Você Perdeu! :(");
+        }        
+    }
+
+    function randomNumber() {
+        cpu.number = Math.floor(Math.random() * 11);
+    }
+
+    function verify() {
+        if (user.option == "par") {
+            cpu.option = "impar";
+        } else {
+            cpu.option = "par";
+        }
+    }
+
+    function start() {
+        user.option = prompt("Escolha uma opção entre Par ou Impar: ");
+        user.option = user.option.toLowerCase();
+        user.number = parseInt(prompt("Escolha um Número para jogar: "));
+        verify();
+        randomNumber();
+        decisaoPartida();
+    }
+
+</script>

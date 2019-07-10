@@ -1,0 +1,32 @@
+<script type="text/javascript">
+
+    
+    function calculadora(numA, numB, op) {
+        if (op == "+") {
+            return numA + numB;
+        }
+        if (op == "-") {
+            return numA - numB;
+        }
+        if (op == "*" || op == "x") {
+            return numA * numB;
+        }
+        if (op == "/") {
+            return numA / numB;
+        }
+        else {
+            return "nada";
+        }
+    }
+
+    var number1 = prompt("valor: ");
+    var operator = prompt("operador: ")
+    var number2 = prompt("valor: ")
+
+    document.write(calculadora(number1, number2, operator));
+    
+    //document.write(calculadora(5, 3, "/"))
+
+
+
+</script>

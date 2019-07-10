@@ -1,0 +1,35 @@
+<script type="text/javascript">
+
+
+    function calculadora(numA, numB, op) {
+
+        switch(op){
+            case "+":
+                return numA + numB;
+                break;
+            case "-":
+                return numA - numB;
+                break;
+            case "*":
+                return numA * numB;
+                break;
+            case "x":
+                return numA * numB;
+                break
+            case "/":
+                return numA / numB;
+                break;
+        }
+    }
+
+    var number1 = prompt("valor: ");
+    var operator = prompt("operador: ")
+    var number2 = prompt("valor: ")
+
+    document.write(calculadora(parseInt(number1), parseInt(number2), operator));
+
+    //document.write(calculadora(5, 3, "/"))
+
+
+
+</script>

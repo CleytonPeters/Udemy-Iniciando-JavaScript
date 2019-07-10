@@ -1,0 +1,45 @@
+<script type="text/javascript">
+
+    class Livro { //classe Livro
+        constructor(titulo, autor, ano) { //construtor de titulo, autor, ano
+            this.titulo = titulo; //this is titulo of Livro
+            this.autor = autor;    //this is autor of Livro
+            this.ano = ano;        //this is ano of Livro
+        }
+
+        exibir() {          //método exibir
+            let html = `    
+            <h1>${this.titulo}</h1>
+            <h2>${this.autor}</h2>
+            <p>${this.ano}</p>
+            `;
+            document.write(html);
+        }
+
+    }
+
+    var primeiroLivro = new Livro('Bicicleta', 'Cleyton', '2019');
+    primeiroLivro.exibir(); //chama método exibir do primeiroLivro.
+
+    class Carro {
+        constructor(cor, marca, preco) {
+            this.cor = cor;
+            this.marca = marca;
+            this.preco = preco;
+        }
+
+        get mostrar() { //Método mostrar
+            let html = `
+            <h1>${this.cor}</h1>
+            <h2>${this.marca}</h2>
+            <p>${this.preco}</p>
+            `;
+            document.write(html);
+        }       
+    }
+
+    var newCar = new Carro('preto', 'chevrolet', '20.000');
+    newCar.mostrar; //chama método Mostrar sem precisar () pois tem um get na frente no metodo.
+
+    
+</script>

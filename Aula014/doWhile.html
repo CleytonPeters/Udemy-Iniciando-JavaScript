@@ -1,0 +1,42 @@
+<script type="text/javascript">
+
+    var lista = new Array();
+    var next = 0
+    var i = 0;
+    var add;
+
+    do {
+        criaUsuario(prompt("Digite seu nome: "), prompt("Digite sua idade: "));
+        add = prompt("Você deseja continuar adicionando usuários? s ou n: ")
+    } while (add == "s");
+    imprimeInformacoes();
+
+
+    function imprimeInformacoes() {
+        if (add != "s") {
+            for (var ler = 0; ler < next; ler++) {
+                document.write("Nome: " + lista[ler].nome + "<br>Idade: " + lista[ler].idade + "<br>" + yearTest(ler)+"<br>");
+            }
+        }
+    }
+    function yearTest(ler) {        
+        if (lista[ler].idade >= 18) {
+            return "Maior";
+        } else {
+            return "Menor";
+        }
+    }
+
+    function criaUsuario(nome, idade) {
+        while (i == next) {
+            var usuario = new Object();
+            usuario.nome = nome
+            usuario.idade = idade
+            lista[i] = usuario;
+            i++;
+        }
+            next = lista.length;
+    }
+
+
+</script>

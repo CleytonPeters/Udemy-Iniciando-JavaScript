@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="3210" >
+            <title>Título da Página</title>
+        <!--recomendado colocar o CSS aqui-->
+    </head>
+    <body>
+        <h2>Home</h2>
+        <div id="identifyOne" class="oneClass">
+
+        </div>
+        <div class="classOne">
+            <p>esse é a segunda div</p>
+        </div>
+        <div class="classOne">
+            <p>esse é a terceira div</p>
+        </div>
+
+        <script type="text/javascript">
+
+            let nome = "<h3>Cleyton</h3>";
+            let testeClasse = "teste de chamar classe"
+            document.getElementById("identifyOne").innerHTML = nome;
+            document.getElementsByClassName("classOne").innerHTML = testeClasse;
+
+
+
+            let testeClasse2 = document.getElementsByClassName("oneClass")
+            for (let item of testeClasse2) {
+                item.innerHTML += "Teste Substituição" //colocar um + ele concatena a string
+            }
+
+        </script>
+
+    </body> <!-- JavaScript - recomendado colocar antes de fechar de fechar  o body-->
+</html>

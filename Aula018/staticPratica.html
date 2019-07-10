@@ -1,0 +1,22 @@
+<script type="text/javascript">
+
+    class Util {
+        static ulHtml(lista) {
+            let html = '<ul>'
+            for (let paraCadaItem of lista) {
+                html += `
+                <li>${paraCadaItem}</li>
+                `                
+            }
+            html += '</ul>'
+            return html;
+        }
+    }
+
+    document.write(Util.ulHtml(['Vectra', 'Montana']))
+
+
+
+
+
+</script>

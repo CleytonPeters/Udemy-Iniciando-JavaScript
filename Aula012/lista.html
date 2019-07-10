@@ -1,0 +1,35 @@
+<script>
+
+    var lista2 = [
+         {
+        nome: "Cleytão",
+        sobrenome: "Peters",
+        idade: 25
+        },
+        {
+        nome: "Jean",
+        sobrenome: "Maic",
+        idade: 54
+        },
+        {
+        nome: "Guilherme",
+        sobrenome: "Jorg",
+        idade: 33
+        },
+    ];
+
+    //for (let num = 0; num <= lista2.length; num++) {
+    //    document.write(lista2[num].nome + "<br>");
+    //}
+
+    //  for (let chave in lista2) { //recebe uma chave, que pega o valor inicial da array e percorre todo ele sem precisar 
+        //ficar colocando manualmente, ai pega a chave e percorre o tamanho da lista.
+    //    document.write(lista2[chave].nome + "<br>");
+    //}
+
+    for (criaVariavel of lista2) { //cria uma variavel e percorre a lista
+        document.write(criaVariavel.nome +"<br>");
+    }
+
+
+</script>

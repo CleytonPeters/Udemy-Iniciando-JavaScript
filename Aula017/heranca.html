@@ -1,0 +1,33 @@
+<script type="text/javascript">
+
+    class Livro { 
+        constructor(titulo, autor, ano) { 
+            this.titulo = titulo; 
+            this.autor = autor;    
+            this.ano = ano;   
+        }
+
+        get exibir() {      
+            let html = `
+            <h1>${this.titulo}</h1>
+            <h2>${this.autor}</h2>
+            <p>${this.ano}</p>
+            `;
+            return html;
+        }
+
+    }
+
+    class HerancaLivro extends Livro { //herança de livro, herda de livro.
+        constructor(titulo, autor, ano) {
+            super(titulo, autor.toUpperCase(), ano);//precisa para buscar na classe pai.
+            //pode ser alterado sem interferir na classe Pai.
+        }
+    }
+
+    var primeiroLivro = new HerancaLivro('Bicicleta', 'Cleyton', '2019');
+
+    document.write(primeiroLivro.exibir)
+
+
+</script>
