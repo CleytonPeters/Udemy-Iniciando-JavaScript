@@ -1,0 +1,40 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <meta charset="3210">
+        <title>Formlário</title>
+    </head>
+    <body>
+        <p>
+            <input type="text" id="nome" placeholder="Nome">
+            <span id="nomeErro" style="display:none"></span>
+
+        </p>
+        <p>
+            <input type="text" id="sobrenome" placeholder="Sobrenome">
+        </p>
+        <p>
+            <select id="estado" onchange="escolheEstado()">
+                <option value="">Escolha o estado</option>
+                <option value="PR">Paraná</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="RS">Rio Grande do Sul</option>
+            </select>
+        </p>
+        <p>
+            <select id="cidade" style="display:none">
+                
+            </select>
+        </p>
+        <p>
+            <input type="button" onclick="executarFormulario()" value="Executar">
+        </p>
+
+        <span id="exibeDados">
+
+        </span>
+
+        <script src="app.js"></script>
+
+    </body>
+</html>

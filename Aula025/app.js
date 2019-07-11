@@ -1,9 +1,4 @@
-var mudaCor = function () {
-    var nome = document.getElementById();
-    document.getElementById(nome).style.background = "blue"
+function changeColor(color) {
+    document.getElementById('page').style.backgroundColor = color;
 }
-
-if (azul.addEventListener('click', mudaCor))
-    else if (amarelo.addEventListener('click', mudaCor))
-    else if (vermelho.addEventListener('click', mudaCor))
-    else if (preto.addEventListener('click', mudaCor))
+    
