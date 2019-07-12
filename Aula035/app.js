@@ -1,3 +1,5 @@
+persisteDados();
+
 function executarFormulario() {
 
     if (validacao()) {
@@ -9,11 +11,32 @@ function executarFormulario() {
     let estado = document.getElementById('estado').value;
     let cidade = document.getElementById('cidade').value;
 
+    let pessoa = { 'Nome': nome, 'Sobrenome': sobrenome, 'Estado': estado, 'Cidade': cidade };
+    persisteDados(pessoa);
+}
+
+function persisteDados(novaPessoa = null) {
+    let listaPessoas = localStorage.getItem('listaPessoas');
+    if (listaPessoas) {
+        listaPessoas = JSON.parse(listaPessoas);
+    } else {
+        listaPessoas = [];
+    }
+
+    if (novaPessoa) {
+        listaPessoas.push(novaPessoa);
+        localStorage.getItem('listaPessoa', JSON.stringify(listaPessoas));
+    }
+
     let exibeDados = document.getElementById('exibeDados');
-    exibeDados.innerHTML += `<p>Nome: ${nome}</p>`;
-    exibeDados.innerHTML += `<p>Sobrenome: ${sobrenome}</p>`;
-    exibeDados.innerHTML += `<p>Estado: ${estado}</p>`;
-    exibeDados.innerHTML += `<p>Cidade: ${cidade}</p>`;
+    exibeDados.innerHTML = "";
+    for (let pessoa of listaPessoas) {
+        let chaves = Object.keys(pessoa);
+        for (let item of chaves) {
+            exibeDados.innerHTML += `<p>${item} ${pessoa[item]}</p>`;
+        }
+    }
+    
 }
 
 function escolheEstado() {

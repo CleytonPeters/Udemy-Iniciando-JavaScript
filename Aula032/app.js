@@ -10,10 +10,12 @@ function executarFormulario() {
     let cidade = document.getElementById('cidade').value;
 
     let exibeDados = document.getElementById('exibeDados');
-    exibeDados.innerHTML += `<p>Nome: ${nome}</p>`;
-    exibeDados.innerHTML += `<p>Sobrenome: ${sobrenome}</p>`;
-    exibeDados.innerHTML += `<p>Estado: ${estado}</p>`;
-    exibeDados.innerHTML += `<p>Cidade: ${cidade}</p>`;
+    let pessoa = { 'Nome': nome, 'Sobrenome': sobrenome, 'Estado': estado, 'Cidade': cidade };
+    let chaves = Object.keys(pessoa);
+    for (let item of chaves) {
+        exibeDados.innerHTML += `<p>${item} ${pessoa[item]}</p>`;
+    }
+
 }
 
 function escolheEstado() {

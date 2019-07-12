@@ -1,3 +1,4 @@
+
 function executarFormulario() {
 
     if (validacao() ) {
@@ -23,24 +24,25 @@ function escolheEstado() {
             "estado": "RS",
             "cidades": [
                 { "nome": "Porto Alegre", "valor": "portoalegre" },
-                { "nome": "Caxias do Sul", "valor": "caxiasdosul" },
+                { "nome": "Caxias do Sul", "valor": "caxiasdosul" }
             ]
         },
         {
             "estado": "SC",
             "cidades": [
                 { "nome": "Joinville", "valor": "joinville" },
-                { "nome": "Florianopolis", "valor": "florianopolis" },
+                { "nome": "Florianopolis", "valor": "florianopolis" }
             ]
         },
         {
             "estado": "PR",
             "cidades": [
                 { "nome": "Foz do Iguacu", "valor": "fozdoiguacu" },
-                { "nome": "Londrina", "valor": "londrina" },
+                { "nome": "Londrina", "valor": "londrina" }
             ]
         },
     ];
+
     let estado = document.getElementById('estado').value;
     let cidade = document.getElementById('cidade');
     let existeEstado = false;
@@ -68,7 +70,7 @@ function validacao() {
     let temErro = false;
 
     let nome = document.getElementById('nome').value;
-    let nomeErro = criarElemetoErro('nome');
+    let nomeErro = criaElemetoErro('nome');
     if (nome == "") {
         nomeErro.innerHTML = "Preencha um nome válido";
         nomeErro.style.display = "initial";
@@ -79,14 +81,14 @@ function validacao() {
     return temErro;
 }
 
-function criarElemetoErro(idAlvo) {
-    let elementoAlvo = document.getElementById(idAlvo)
+function criaElemetoErro(idAlvo) {
+    let elementoAlvo = document.getElementById(idAlvo);
     let nodePai = elementoAlvo.parentNode;
-
+   
     if (!document.getElementById('nomeErro')) {
         let valorAlvo = document.getElementById(idAlvo).value;
         nodePai.innerHTML += `<span id="${idAlvo}Erro" style="display:none"></span>`;
-        document.getElementById('idAlvo').value = valorAlvo;
+        document.getElementById(idAlvo).value = valorAlvo;
     }
 
     return document.getElementById(idAlvo+'Erro');
